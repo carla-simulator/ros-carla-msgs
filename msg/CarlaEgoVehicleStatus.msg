@@ -5,7 +5,7 @@
 # For a copy, see <https://opensource.org/licenses/MIT>.
 #
 
-Header header
+std_msgs/Header header
 
 float32 velocity
 geometry_msgs/Accel acceleration

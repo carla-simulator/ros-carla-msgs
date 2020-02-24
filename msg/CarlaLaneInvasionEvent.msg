@@ -6,7 +6,7 @@
 #
 # A lane invasion event
 
-Header header
+std_msgs/Header header
 
 int32[] crossed_lane_markings
 
