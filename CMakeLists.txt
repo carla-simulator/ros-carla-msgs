@@ -28,6 +28,7 @@ add_message_files(
   CarlaTrafficLightStatus.msg
   CarlaTrafficLightStatusList.msg
   CarlaWalkerControl.msg
+  CarlaWeatherParameters.msg
 )
 
 generate_messages(
