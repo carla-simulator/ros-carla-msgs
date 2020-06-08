@@ -5,6 +5,7 @@ find_package(ros_environment REQUIRED)
 set(ROS_VERSION $ENV{ROS_VERSION})
 
 set(MSG_FILES
+  CarlaBoundingBox.msg
   CarlaEgoVehicleControl.msg
   CarlaEgoVehicleStatus.msg
   CarlaEgoVehicleInfoWheel.msg
@@ -16,9 +17,12 @@ set(MSG_FILES
   CarlaActorList.msg
   CarlaControl.msg
   CarlaStatus.msg
+  CarlaTrafficLightInfo.msg
+  CarlaTrafficLightInfoList.msg
   CarlaTrafficLightStatus.msg
   CarlaTrafficLightStatusList.msg
   CarlaWalkerControl.msg
+  CarlaWeatherParameters.msg
 )
 
 if (${ROS_VERSION} EQUAL 1)
