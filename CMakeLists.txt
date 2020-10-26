@@ -12,6 +12,8 @@ add_message_files(
   DIRECTORY msg
   FILES
   CarlaBoundingBox.msg
+  CarlaDVSEvent.msg
+  CarlaDVSEventArray.msg
   CarlaEgoVehicleControl.msg
   CarlaEgoVehicleStatus.msg
   CarlaEgoVehicleInfoWheel.msg
