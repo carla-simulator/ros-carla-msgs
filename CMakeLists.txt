@@ -22,8 +22,6 @@ add_message_files(
   CarlaActorInfo.msg
   CarlaActorList.msg
   CarlaControl.msg
-  CarlaRadarDetection.msg
-  CarlaRadarMeasurement.msg
   CarlaStatus.msg
   CarlaTrafficLightInfo.msg
   CarlaTrafficLightInfoList.msg
