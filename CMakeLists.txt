@@ -6,6 +6,7 @@ find_package(catkin REQUIRED COMPONENTS
   message_generation
   std_msgs
   geometry_msgs
+  diagnostic_msgs
 )
 
 add_service_files(
@@ -17,7 +18,6 @@ add_service_files(
 add_message_files(
   DIRECTORY msg
   FILES
-  CarlaActorAttribute.msg
   CarlaBoundingBox.msg
   CarlaEgoVehicleControl.msg
   CarlaEgoVehicleStatus.msg

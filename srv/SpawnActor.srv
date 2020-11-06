@@ -7,7 +7,7 @@
 
 string type
 string id
-CarlaActorAttribute[] attributes
+diagnostic_msgs/KeyValue attributes
 geometry_msgs/pose transform
 uint32 attach_to
 ---
