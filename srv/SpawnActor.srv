@@ -12,3 +12,4 @@ geometry_msgs/pose transform
 uint32 attach_to
 ---
 int32 id
+string error_string
