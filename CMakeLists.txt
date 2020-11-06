@@ -8,9 +8,17 @@ find_package(catkin REQUIRED COMPONENTS
   geometry_msgs
 )
 
+add_service_files(
+  DIRECTORY srv
+  FILES 
+  SpawnActor.srv
+)
+
 add_message_files(
   DIRECTORY msg
   FILES
+  CarlaActorAttribute.msg
+  CarlaActorBlueprint.msg
   CarlaBoundingBox.msg
   CarlaEgoVehicleControl.msg
   CarlaEgoVehicleStatus.msg
