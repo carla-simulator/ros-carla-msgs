@@ -7,7 +7,7 @@
 
 string type
 string id
-diagnostic_msgs/KeyValue attributes
+diagnostic_msgs/KeyValue[] attributes
 geometry_msgs/Pose transform
 uint32 attach_to
 ---
