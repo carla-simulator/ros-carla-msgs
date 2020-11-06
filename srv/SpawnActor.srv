@@ -5,7 +5,9 @@
 # For a copy, see <https://opensource.org/licenses/MIT>.
 #
 
-CarlaActorBlueprint blueprint
+string type
+string id
+CarlaActorAttribute[] attributes
 geometry_msgs/pose transform
 uint32 attach_to
 ---

@@ -18,7 +18,6 @@ add_message_files(
   DIRECTORY msg
   FILES
   CarlaActorAttribute.msg
-  CarlaActorBlueprint.msg
   CarlaBoundingBox.msg
   CarlaEgoVehicleControl.msg
   CarlaEgoVehicleStatus.msg
