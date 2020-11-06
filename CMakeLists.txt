@@ -42,6 +42,7 @@ generate_messages(
   DEPENDENCIES
   std_msgs
   geometry_msgs
+  diagnostic_msgs
 )
 
 
@@ -50,4 +51,5 @@ catkin_package(
   message_runtime
   std_msgs
   geometry_msgs
+  diagnostic_msgs
 )
