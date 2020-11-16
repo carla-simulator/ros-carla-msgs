@@ -13,6 +13,7 @@ add_service_files(
   DIRECTORY srv
   FILES 
   SpawnObject.srv
+  DestroyObject.srv
 )
 
 add_message_files(
