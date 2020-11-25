@@ -14,6 +14,7 @@ add_service_files(
   FILES 
   SpawnObject.srv
   DestroyObject.srv
+  GetBlueprints.srv
 )
 
 add_message_files(
