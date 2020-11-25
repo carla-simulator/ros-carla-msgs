@@ -26,6 +26,8 @@ jobs:
         ros-version: [melodic, noetic]
     steps:
     - uses: actions/checkout@v2
+    - name: Setup
+      run: ./install_dependencies.sh
     - name: Init Workspace
       run: |
         mkdir -p $GITHUB_WORKSPACE/../catkin_ws/src
