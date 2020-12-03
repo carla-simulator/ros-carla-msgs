@@ -10,6 +10,7 @@ string id
 diagnostic_msgs/KeyValue[] attributes
 geometry_msgs/Pose transform
 uint32 attach_to
+bool random_pose
 ---
 int32 id
 string error_string
