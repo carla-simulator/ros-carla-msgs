@@ -6,6 +6,15 @@ find_package(catkin REQUIRED COMPONENTS
   message_generation
   std_msgs
   geometry_msgs
+  diagnostic_msgs
+)
+
+add_service_files(
+  DIRECTORY srv
+  FILES 
+  SpawnObject.srv
+  DestroyObject.srv
+  GetBlueprints.srv
 )
 
 add_message_files(
@@ -35,6 +44,7 @@ generate_messages(
   DEPENDENCIES
   std_msgs
   geometry_msgs
+  diagnostic_msgs
 )
 
 
@@ -43,4 +53,5 @@ catkin_package(
   message_runtime
   std_msgs
   geometry_msgs
+  diagnostic_msgs
 )
