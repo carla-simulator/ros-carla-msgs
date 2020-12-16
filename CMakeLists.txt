@@ -1,8 +1,16 @@
+cmake_minimum_required(VERSION 2.8.3)
 project(carla_msgs)
 
 find_package(ros_environment REQUIRED)
 
 set(ROS_VERSION $ENV{ROS_VERSION})
+
+
+set(SERVICE_FILES
+  SpawnObject.srv
+  DestroyObject.srv
+  GetBlueprints.srv
+)
 
 set(MSG_FILES
   CarlaBoundingBox.msg
@@ -16,8 +24,6 @@ set(MSG_FILES
   CarlaActorInfo.msg
   CarlaActorList.msg
   CarlaControl.msg
-  CarlaRadarDetection.msg
-  CarlaRadarMeasurement.msg
   CarlaStatus.msg
   CarlaTrafficLightInfo.msg
   CarlaTrafficLightInfoList.msg
@@ -35,6 +41,13 @@ if (${ROS_VERSION} EQUAL 1)
     message_generation
     std_msgs
     geometry_msgs
+    diagnostic_msgs
+  )
+
+  add_service_files(
+    DIRECTORY srv
+    FILES 
+    ${SERVICE_FILES}
   )
 
   add_message_files(
@@ -47,6 +60,7 @@ if (${ROS_VERSION} EQUAL 1)
     DEPENDENCIES
     std_msgs
     geometry_msgs
+    diagnostic_msgs
   )
 
 
@@ -55,6 +69,7 @@ if (${ROS_VERSION} EQUAL 1)
     message_runtime
     std_msgs
     geometry_msgs
+    diagnostic_msgs
   )
 
 elseif(${ROS_VERSION} EQUAL 2)
@@ -74,6 +89,7 @@ elseif(${ROS_VERSION} EQUAL 2)
   find_package(builtin_interfaces REQUIRED)
   find_package(std_msgs REQUIRED)
   find_package(geometry_msgs REQUIRED)
+  find_package(diagnostic_msgs REQUIRED)
   find_package(rosidl_default_generators REQUIRED)
 
   # Apend "msg/" to each file name
@@ -83,9 +99,17 @@ elseif(${ROS_VERSION} EQUAL 2)
   endforeach()
   set(MSG_FILES ${TEMP_LIST})
 
+  # Apend "srv/" to each file name
+  set(TEMP_LIST "")
+  foreach(SERVICE_FILE ${SERVICE_FILES})
+    list(APPEND TEMP_LIST "srv/${SERVICE_FILE}")
+  endforeach()
+  set(SERVICE_FILES ${TEMP_LIST})
+
   rosidl_generate_interfaces(${PROJECT_NAME}
     ${MSG_FILES}
-    DEPENDENCIES builtin_interfaces std_msgs geometry_msgs
+    ${SERVICE_FILES}
+    DEPENDENCIES builtin_interfaces std_msgs geometry_msgs diagnostic_msgs
     ADD_LINTER_TESTS
   )
 

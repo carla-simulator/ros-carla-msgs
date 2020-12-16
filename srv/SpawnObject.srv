@@ -5,6 +5,12 @@
 # For a copy, see <https://opensource.org/licenses/MIT>.
 #
 
-std_msgs/Header header
-
-CarlaRadarDetection[] detections
+string type
+string id
+diagnostic_msgs/KeyValue[] attributes
+geometry_msgs/Pose transform
+uint32 attach_to
+bool random_pose
+---
+int32 id
+string error_string
