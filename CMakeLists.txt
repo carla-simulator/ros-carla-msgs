@@ -14,6 +14,7 @@ add_service_files(
   FILES 
   SpawnObject.srv
   DestroyObject.srv
+  GetActor.srv
   GetBlueprints.srv
 )
 
