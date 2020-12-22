@@ -5,72 +5,42 @@ find_package(ros_environment REQUIRED)
 
 set(ROS_VERSION $ENV{ROS_VERSION})
 
-
-set(SERVICE_FILES
-  SpawnObject.srv
-  DestroyObject.srv
-  GetBlueprints.srv
-)
+set(SERVICE_FILES SpawnObject.srv DestroyObject.srv GetBlueprints.srv)
 
 set(MSG_FILES
-  CarlaBoundingBox.msg
-  CarlaEgoVehicleControl.msg
-  CarlaEgoVehicleStatus.msg
-  CarlaEgoVehicleInfoWheel.msg
-  CarlaEgoVehicleInfo.msg
-  CarlaCollisionEvent.msg
-  CarlaLaneInvasionEvent.msg
-  CarlaWorldInfo.msg
-  CarlaActorInfo.msg
-  CarlaActorList.msg
-  CarlaControl.msg
-  CarlaStatus.msg
-  CarlaTrafficLightInfo.msg
-  CarlaTrafficLightInfoList.msg
-  CarlaTrafficLightStatus.msg
-  CarlaTrafficLightStatusList.msg
-  CarlaWalkerControl.msg
-  CarlaWeatherParameters.msg
-)
+    CarlaBoundingBox.msg
+    CarlaEgoVehicleControl.msg
+    CarlaEgoVehicleStatus.msg
+    CarlaEgoVehicleInfoWheel.msg
+    CarlaEgoVehicleInfo.msg
+    CarlaCollisionEvent.msg
+    CarlaLaneInvasionEvent.msg
+    CarlaWorldInfo.msg
+    CarlaActorInfo.msg
+    CarlaActorList.msg
+    CarlaControl.msg
+    CarlaStatus.msg
+    CarlaTrafficLightInfo.msg
+    CarlaTrafficLightInfoList.msg
+    CarlaTrafficLightStatus.msg
+    CarlaTrafficLightStatusList.msg
+    CarlaWalkerControl.msg
+    CarlaWeatherParameters.msg)
 
-if (${ROS_VERSION} EQUAL 1)
+if(${ROS_VERSION} EQUAL 1)
   cmake_minimum_required(VERSION 2.8.3)
 
-  ## Find catkin macros and libraries
-  find_package(catkin REQUIRED COMPONENTS
-    message_generation
-    std_msgs
-    geometry_msgs
-    diagnostic_msgs
-  )
+  # Find catkin macros and libraries
+  find_package(catkin REQUIRED COMPONENTS message_generation std_msgs
+                                          geometry_msgs diagnostic_msgs)
 
-  add_service_files(
-    DIRECTORY srv
-    FILES 
-    ${SERVICE_FILES}
-  )
+  add_service_files(DIRECTORY srv FILES ${SERVICE_FILES})
 
-  add_message_files(
-    DIRECTORY msg
-    FILES
-    ${MSG_FILES}
-  )
+  add_message_files(DIRECTORY msg FILES ${MSG_FILES})
 
-  generate_messages(
-    DEPENDENCIES
-    std_msgs
-    geometry_msgs
-    diagnostic_msgs
-  )
+  generate_messages(DEPENDENCIES std_msgs geometry_msgs diagnostic_msgs)
 
-
-  catkin_package(
-    CATKIN_DEPENDS
-    message_runtime
-    std_msgs
-    geometry_msgs
-    diagnostic_msgs
-  )
+  catkin_package(CATKIN_DEPENDS message_runtime std_msgs geometry_msgs diagnostic_msgs)
 
 elseif(${ROS_VERSION} EQUAL 2)
 
@@ -106,12 +76,16 @@ elseif(${ROS_VERSION} EQUAL 2)
   endforeach()
   set(SERVICE_FILES ${TEMP_LIST})
 
-  rosidl_generate_interfaces(${PROJECT_NAME}
+  rosidl_generate_interfaces(
+    ${PROJECT_NAME}
     ${MSG_FILES}
     ${SERVICE_FILES}
-    DEPENDENCIES builtin_interfaces std_msgs geometry_msgs diagnostic_msgs
-    ADD_LINTER_TESTS
-  )
+    DEPENDENCIES
+    builtin_interfaces
+    std_msgs
+    geometry_msgs
+    diagnostic_msgs
+    ADD_LINTER_TESTS)
 
   ament_export_dependencies(rosidl_default_runtime)
 
@@ -123,4 +97,3 @@ elseif(${ROS_VERSION} EQUAL 2)
   ament_package()
 
 endif()
-
