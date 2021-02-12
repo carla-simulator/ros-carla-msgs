@@ -8,5 +8,4 @@
 uint64 frame                  # frame number
 
 float32 fixed_delta_seconds   # duration of one frame
-bool synchronous_mode         # carla is in synchronous mode
-bool synchronous_mode_running # true: running, false: paused
+bool running                  # true: running, false: paused
