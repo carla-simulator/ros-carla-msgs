@@ -6,7 +6,7 @@
 #
 # This represents a vehicle control message sent to CARLA simulator
 
-Header header
+std_msgs/Header header
 
 # The CARLA vehicle control data
 
