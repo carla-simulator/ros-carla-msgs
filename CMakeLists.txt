@@ -40,7 +40,8 @@ if(${ROS_VERSION} EQUAL 1)
 
   generate_messages(DEPENDENCIES std_msgs geometry_msgs diagnostic_msgs)
 
-  catkin_package(CATKIN_DEPENDS message_runtime std_msgs geometry_msgs diagnostic_msgs)
+  catkin_package(CATKIN_DEPENDS message_runtime std_msgs geometry_msgs
+                 diagnostic_msgs)
 
 elseif(${ROS_VERSION} EQUAL 2)
 
