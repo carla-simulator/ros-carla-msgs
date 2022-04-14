@@ -17,6 +17,8 @@ float32 damping_rate_zero_throttle_clutch_disengaged
 bool use_gear_autobox
 float32 gear_switch_time
 float32 clutch_strength
+float32 final_ratio
+CarlaEgoVehicleInfoGear[] forward_gears
 float32 mass
 float32 drag_coefficient
 geometry_msgs/Vector3 center_of_mass
