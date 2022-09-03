@@ -15,6 +15,9 @@ set(MSG_FILES
     CarlaEgoVehicleInfo.msg
     CarlaCollisionEvent.msg
     CarlaLaneInvasionEvent.msg
+    CarlaSpeedometer.msg
+    CarlaRoute.msg
+    CarlaGnssRoute.msg
     CarlaWorldInfo.msg
     CarlaActorInfo.msg
     CarlaActorList.msg
@@ -31,16 +34,16 @@ if(${ROS_VERSION} EQUAL 1)
   cmake_minimum_required(VERSION 2.8.3)
 
   # Find catkin macros and libraries
-  find_package(catkin REQUIRED COMPONENTS message_generation std_msgs
+  find_package(catkin REQUIRED COMPONENTS message_generation sensor_msgs std_msgs
                                           geometry_msgs diagnostic_msgs)
 
   add_service_files(DIRECTORY srv FILES ${SERVICE_FILES})
 
   add_message_files(DIRECTORY msg FILES ${MSG_FILES})
 
-  generate_messages(DEPENDENCIES std_msgs geometry_msgs diagnostic_msgs)
+  generate_messages(DEPENDENCIES std_msgs geometry_msgs diagnostic_msgs sensor_msgs)
 
-  catkin_package(CATKIN_DEPENDS message_runtime std_msgs geometry_msgs diagnostic_msgs)
+  catkin_package(CATKIN_DEPENDS message_runtime std_msgs geometry_msgs diagnostic_msgs sensor_msgs)
 
 elseif(${ROS_VERSION} EQUAL 2)
 
@@ -60,6 +63,7 @@ elseif(${ROS_VERSION} EQUAL 2)
   find_package(std_msgs REQUIRED)
   find_package(geometry_msgs REQUIRED)
   find_package(diagnostic_msgs REQUIRED)
+  find_package(sensor_msgs REQUIRED)
   find_package(rosidl_default_generators REQUIRED)
 
   # Apend "msg/" to each file name
@@ -82,6 +86,7 @@ elseif(${ROS_VERSION} EQUAL 2)
     ${SERVICE_FILES}
     DEPENDENCIES
     builtin_interfaces
+    sensor_msgs
     std_msgs
     geometry_msgs
     diagnostic_msgs

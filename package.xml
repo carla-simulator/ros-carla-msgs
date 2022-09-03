@@ -20,6 +20,7 @@
 
   <depend condition="$ROS_VERSION == 2">builtin_interfaces</depend>
   <depend>std_msgs</depend>
+  <depend>sensor_msgs</depend>
   <depend>geometry_msgs</depend>
   <depend>diagnostic_msgs</depend>
 
