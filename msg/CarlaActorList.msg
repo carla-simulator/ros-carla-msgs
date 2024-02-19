@@ -5,5 +5,5 @@
 # For a copy, see <https://opensource.org/licenses/MIT>.
 #
 
-CarlaActorInfo[] actors
+carla_msgs/CarlaActorInfo[] actors
 

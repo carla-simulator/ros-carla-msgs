@@ -4,6 +4,9 @@
 # This work is licensed under the terms of the MIT license.
 # For a copy, see <https://opensource.org/licenses/MIT>.
 #
+
+std_msgs/Header header
+
 uint32 id
 
 uint8 RED=0

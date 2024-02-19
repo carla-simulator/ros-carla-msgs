@@ -1,0 +1,21 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from carla_msgs/srv/GetBlueprints.srv
+// generated code does not contain a copyright notice
+#pragma once
+
+
+module carla_msgs {
+  module srv {
+    @verbatim (language="comment", text=
+      "Copyright (c) 2020 Intel Corporation." "\n"
+      "" "\n"
+      "This work is licensed under the terms of the MIT license." "\n"
+      "For a copy, see <https://opensource.org/licenses/MIT>.")
+    struct GetBlueprints_Request {
+      string filter;
+    };
+    struct GetBlueprints_Response {
+      sequence<string> blueprints;
+    };
+  };
+};

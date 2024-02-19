@@ -1,0 +1,34 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from carla_msgs/msg/CarlaWeatherParameters.msg
+// generated code does not contain a copyright notice
+#pragma once
+
+
+module carla_msgs {
+  module msg {
+    @verbatim (language="comment", text=
+      "Copyright (c) 2020 Intel Corporation." "\n"
+      "" "\n"
+      "This work is licensed under the terms of the MIT license." "\n"
+      "For a copy, see <https://opensource.org/licenses/MIT>.")
+    struct CarlaWeatherParameters {
+      float cloudiness;
+
+      float precipitation;
+
+      float precipitation_deposits;
+
+      float wind_intensity;
+
+      float fog_density;
+
+      float fog_distance;
+
+      float wetness;
+
+      float sun_azimuth_angle;
+
+      float sun_altitude_angle;
+    };
+  };
+};

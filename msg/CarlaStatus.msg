@@ -5,6 +5,8 @@
 # For a copy, see <https://opensource.org/licenses/MIT>.
 #
 
+std_msgs/Header header
+
 uint64 frame                  # frame number
 
 float32 fixed_delta_seconds   # duration of one frame

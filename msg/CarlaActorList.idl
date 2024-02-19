@@ -1,0 +1,19 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from carla_msgs/msg/CarlaActorList.msg
+// generated code does not contain a copyright notice
+#pragma once
+
+#include "carla_msgs/msg/CarlaActorInfo.idl"
+
+module carla_msgs {
+  module msg {
+    @verbatim (language="comment", text=
+      "Copyright (c) 2019 Intel Corporation." "\n"
+      "" "\n"
+      "This work is licensed under the terms of the MIT license." "\n"
+      "For a copy, see <https://opensource.org/licenses/MIT>.")
+    struct CarlaActorList {
+      sequence<carla_msgs::msg::CarlaActorInfo> actors;
+    };
+  };
+};

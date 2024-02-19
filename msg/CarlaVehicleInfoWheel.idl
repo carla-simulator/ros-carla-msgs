@@ -1,0 +1,31 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from carla_msgs/msg/CarlaVehicleInfoWheel.msg
+// generated code does not contain a copyright notice
+#pragma once
+
+#include "geometry_msgs/msg/Vector3.idl"
+
+module carla_msgs {
+  module msg {
+    @verbatim (language="comment", text=
+      "Copyright (c) 2019-2020 Intel Corporation." "\n"
+      "" "\n"
+      "This work is licensed under the terms of the MIT license." "\n"
+      "For a copy, see <https://opensource.org/licenses/MIT>.")
+    struct CarlaVehicleInfoWheel {
+      float tire_friction;
+
+      float damping_rate;
+
+      float max_steer_angle;
+
+      float radius;
+
+      float max_brake_torque;
+
+      float max_handbrake_torque;
+
+      geometry_msgs::msg::Vector3 position;
+    };
+  };
+};
