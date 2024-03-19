@@ -1,18 +1,22 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 2.8.12)
 project(carla_msgs)
 
 find_package(ros_environment REQUIRED)
 
 set(ROS_VERSION $ENV{ROS_VERSION})
+if (NOT ROS_VERSION)
+  message(FATAL_ERROR "ROS_VERSION not set. Please source the respective ROS environment before building this component")
+  return()
+endif()
 
 set(SERVICE_FILES SpawnObject.srv DestroyObject.srv GetBlueprints.srv)
 
 set(MSG_FILES
     CarlaBoundingBox.msg
-    CarlaEgoVehicleControl.msg
-    CarlaEgoVehicleStatus.msg
-    CarlaEgoVehicleInfoWheel.msg
-    CarlaEgoVehicleInfo.msg
+    CarlaVehicleControl.msg
+    CarlaVehicleInfoWheel.msg
+    CarlaVehicleInfo.msg
+    CarlaVehicleStatus.msg
     CarlaCollisionEvent.msg
     CarlaLaneInvasionEvent.msg
     CarlaWorldInfo.msg
@@ -32,7 +36,7 @@ if(${ROS_VERSION} EQUAL 1)
 
   # Find catkin macros and libraries
   find_package(catkin REQUIRED COMPONENTS message_generation std_msgs
-                                          geometry_msgs diagnostic_msgs)
+                                          geometry_msgs diagnostic_msgs shape_msgs ackermann_msgs)
 
   add_service_files(DIRECTORY srv FILES ${SERVICE_FILES})
 
@@ -40,7 +44,7 @@ if(${ROS_VERSION} EQUAL 1)
 
   generate_messages(DEPENDENCIES std_msgs geometry_msgs diagnostic_msgs)
 
-  catkin_package(CATKIN_DEPENDS message_runtime std_msgs geometry_msgs diagnostic_msgs)
+  catkin_package(CATKIN_DEPENDS message_runtime std_msgs geometry_msgs diagnostic_msgs shape_msgs ackermann_msgs)
 
 elseif(${ROS_VERSION} EQUAL 2)
 
@@ -58,7 +62,9 @@ elseif(${ROS_VERSION} EQUAL 2)
   find_package(ament_cmake REQUIRED)
   find_package(builtin_interfaces REQUIRED)
   find_package(std_msgs REQUIRED)
+  find_package(shape_msgs REQUIRED)
   find_package(geometry_msgs REQUIRED)
+  find_package(ackermann_msgs REQUIRED)
   find_package(diagnostic_msgs REQUIRED)
   find_package(rosidl_default_generators REQUIRED)
 
@@ -83,7 +89,9 @@ elseif(${ROS_VERSION} EQUAL 2)
     DEPENDENCIES
     builtin_interfaces
     std_msgs
+    shape_msgs
     geometry_msgs
+    ackermann_msgs
     diagnostic_msgs
     ADD_LINTER_TESTS)
 

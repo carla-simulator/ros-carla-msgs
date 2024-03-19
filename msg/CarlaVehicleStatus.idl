@@ -1,0 +1,49 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from carla_msgs/msg/CarlaVehicleStatus.msg
+// generated code does not contain a copyright notice
+#pragma once
+
+#include "ackermann_msgs/msg/AckermannDriveStamped.idl"
+#include "carla_msgs/msg/CarlaVehicleControl.idl"
+#include "geometry_msgs/msg/Accel.idl"
+#include "geometry_msgs/msg/Pose.idl"
+#include "geometry_msgs/msg/Quaternion.idl"
+#include "geometry_msgs/msg/Twist.idl"
+#include "std_msgs/msg/Header.idl"
+
+module carla_msgs {
+  module msg {
+    module CarlaVehicleStatus_Constants {
+      @verbatim (language="comment", text=
+        "last applied control values")
+      const uint8 VEHICLE_CONTROL = 0;
+      const uint8 ACKERMANN_CONTROL = 1;
+    };
+    @verbatim (language="comment", text=
+      "Copyright (c) 2019 Intel Corporation." "\n"
+      "" "\n"
+      "This work is licensed under the terms of the MIT license." "\n"
+      "For a copy, see <https://opensource.org/licenses/MIT>.")
+    struct CarlaVehicleStatus {
+      std_msgs::msg::Header header;
+
+      geometry_msgs::msg::Pose pose;
+
+      geometry_msgs::msg::Twist twist;
+
+      @verbatim (language="comment", text=
+        "the pure signed speed value of the vehicle")
+      float velocity;
+
+      geometry_msgs::msg::Accel acceleration;
+
+      geometry_msgs::msg::Quaternion orientation;
+
+      uint8 active_control_type;
+
+      carla_msgs::msg::CarlaVehicleControl last_applied_vehicle_control;
+
+      ackermann_msgs::msg::AckermannDriveStamped last_applied_ackermann_control;
+    };
+  };
+};

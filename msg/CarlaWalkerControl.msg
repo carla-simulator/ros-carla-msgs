@@ -6,6 +6,8 @@
 #
 # This represents a walker control message sent to CARLA simulator
 
+std_msgs/Header header
+
 geometry_msgs/Vector3 direction
 float32 speed
 bool jump

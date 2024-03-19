@@ -30,3 +30,7 @@ int32 gear
 
 # manual gear shift
 bool manual_gear_shift
+
+# 4 <= control_priority <= 255
+# higher numbers of control input override lower ones
+uint8 control_priority

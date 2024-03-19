@@ -1,0 +1,28 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from carla_msgs/msg/CarlaWalkerControl.msg
+// generated code does not contain a copyright notice
+#pragma once
+
+#include "geometry_msgs/msg/Vector3.idl"
+#include "std_msgs/msg/Header.idl"
+
+module carla_msgs {
+  module msg {
+    @verbatim (language="comment", text=
+      "Copyright (c) 2019 Intel Corporation." "\n"
+      "" "\n"
+      "This work is licensed under the terms of the MIT license." "\n"
+      "For a copy, see <https://opensource.org/licenses/MIT>." "\n"
+      "" "\n"
+      "This represents a walker control message sent to CARLA simulator")
+    struct CarlaWalkerControl {
+      std_msgs::msg::Header header;
+
+      geometry_msgs::msg::Vector3 direction;
+
+      float speed;
+
+      boolean jump;
+    };
+  };
+};

@@ -8,7 +8,7 @@
 uint32 id
 string type
 string rolename
-CarlaEgoVehicleInfoWheel[] wheels
+carla_msgs/CarlaVehicleInfoWheel[] wheels
 float32 max_rpm
 float32 moi
 float32 damping_rate_full_throttle
@@ -20,3 +20,5 @@ float32 clutch_strength
 float32 mass
 float32 drag_coefficient
 geometry_msgs/Vector3 center_of_mass
+# A shape conforming to the outer mesh of the vehicle
+shape_msgs/SolidPrimitive shape

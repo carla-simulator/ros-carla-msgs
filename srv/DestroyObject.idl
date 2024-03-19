@@ -1,0 +1,21 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from carla_msgs/srv/DestroyObject.srv
+// generated code does not contain a copyright notice
+#pragma once
+
+
+module carla_msgs {
+  module srv {
+    @verbatim (language="comment", text=
+      "Copyright (c) 2020 Intel Corporation." "\n"
+      "" "\n"
+      "This work is licensed under the terms of the MIT license." "\n"
+      "For a copy, see <https://opensource.org/licenses/MIT>.")
+    struct DestroyObject_Request {
+      int32 id;
+    };
+    struct DestroyObject_Response {
+      boolean success;
+    };
+  };
+};

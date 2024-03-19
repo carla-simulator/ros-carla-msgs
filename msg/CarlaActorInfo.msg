@@ -8,5 +8,10 @@
 uint32 id
 uint32 parent_id # 0 if no parent available
 string type
+string rosname
 string rolename
+string object_type
+string base_type
+string topic_prefix
+
 
