@@ -19,6 +19,7 @@ set(MSG_FILES
     CarlaActorInfo.msg
     CarlaActorList.msg
     CarlaControl.msg
+    CarlaObstacle.msg
     CarlaStatus.msg
     CarlaTrafficLightInfo.msg
     CarlaTrafficLightInfoList.msg
